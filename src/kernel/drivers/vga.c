@@ -13,6 +13,15 @@ void puts_at(int row, int col, const char* s) {
     }
 }
 
+void put_char_at(int row, int col, char c) {
+    volatile uint16_t* v = VGA_TEXT + (row * 80 + col);
+
+    uint8_t ch = (uint8_t)c;
+    uint8_t attr = 0x07;
+
+    *v = (uint16_t)ch | ((uint16_t)attr << 8);
+}
+
 void clear_screen() {
     for (int i = 0; i < 80*25; i++) {
         VGA_TEXT[i] = (uint16_t)' ' | (uint16_t)(0x07 << 8);

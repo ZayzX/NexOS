@@ -11,10 +11,10 @@ mkdir -p out/os
 GCC_FLAGS="-m32 -ffreestanding -fno-pic -fno-pie -fno-builtin \
 -nostdlib -nostartfiles -O2 -Wall -Wextra"
 
-# Compilation de tous les .c dans drivers/ et libs/
+# Compilation de tous les .c dans drivers/, libs/, idt/ et pic/
 EXTRA_OBJECTS=""
 
-for dir in src/kernel/drivers src/kernel/libs; do
+for dir in src/kernel/drivers src/kernel/libs src/kernel/idt src/kernel/pic src/kernel/shell; do
   if [ -d "$dir" ]; then
     for src_file in "$dir"/*.c; do
       [ -f "$src_file" ] || continue
