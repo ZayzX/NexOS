@@ -14,7 +14,7 @@ GCC_FLAGS="-m32 -ffreestanding -fno-pic -fno-pie -fno-builtin \
 # Compilation de tous les .c dans drivers/, libs/, idt/ et pic/
 EXTRA_OBJECTS=""
 
-for dir in src/kernel/drivers src/kernel/libs src/kernel/idt src/kernel/pic src/kernel/shell; do
+for dir in src/kernel/drivers src/kernel/libs src/kernel/idt src/kernel/pic src/kernel/shell src/kernel/time src/kernel/process; do
   if [ -d "$dir" ]; then
     for src_file in "$dir"/*.c; do
       [ -f "$src_file" ] || continue

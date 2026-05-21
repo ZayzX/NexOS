@@ -6,6 +6,8 @@
 #include "libs/print_string.h"
 #include "libs/scan.h"
 #include "shell/shell.h"
+#include "libs/printf.h"
+#include "process/process.h"
 
 void kmain(void) {
     clear_screen();
@@ -13,6 +15,7 @@ void kmain(void) {
     idt_init();
     pic_init();
     keyboard_init();
+    proc_register("kernel");
     __asm__ __volatile__("sti");
 
     shell();
