@@ -123,8 +123,8 @@ void shell() {
             puts_at(currentRow, 0, "version - affiche la version de l'os"); currentRow++;
             puts_at(currentRow, 0, "time - affiche la date et l'heure"); currentRow++;
             puts_at(currentRow, 0, "sysinfo - affiche des informations sur l'os"); currentRow++;
-            puts_at(currentRow, 0, "reboot - relancer l'os"); currentRow++;
-            puts_at(currentRow, 0, "stop - stopper l'os"); currentRow++;
+            puts_at(currentRow, 0, "reboot - tente un reset matériel via contrôleur clavier"); currentRow++;
+            puts_at(currentRow, 0, "stop - met le CPU en halt"); currentRow++;
             continue;
         }
 
